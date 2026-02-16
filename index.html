@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRM Admission 2026 | B.Tech Entrance & Direct Admission Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Bungee&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #020617; color: #f8fafc; }
+        h1, h2, h3, .font-heading { font-family: 'Space Grotesk', sans-serif; }
+        .font-bungee { font-family: 'Bungee', cursive; }
+        
+        .bg-srm-blue { background-color: #002244; }
+        .text-srm-blue { color: #002244; }
+        .bg-neon-blue { background-color: #00d2ff; }
+        .text-neon-blue { color: #00d2ff; }
+        
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .glass-bright { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.2); }
+        
+        .neo-brutalism { border: 3px solid #000; box-shadow: 6px 6px 0px #000; transition: all 0.2s ease; }
+        .neo-brutalism:hover { transform: translate(-2px, -2px); box-shadow: 10px 10px 0px #000; }
+        .neo-brutalism:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0px #000; }
+
+        .marquee { white-space: nowrap; overflow: hidden; display: inline-block; animation: marquee 20s linear infinite; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        .glow-border { position: relative; }
+        .glow-border::after { content: ''; position: absolute; inset: -2px; background: linear-gradient(45deg, #00d2ff, #3a7bd5, #00d2ff); border-radius: inherit; z-index: -1; opacity: 0; transition: opacity 0.3s; }
+        .glow-border:hover::after { opacity: 1; }
+
+        @keyframes float { 0% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-15px) rotate(2deg); } 100% { transform: translateY(0px) rotate(0deg); } }
+        .float-anim { animation: float 5s ease-in-out infinite; }
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #020617; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #334155; }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.41.0",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.4",
+    "vite": "https://esm.sh/vite@^7.3.1"
+  }
+}
+</script>
+</head>
+<body class="overflow-x-hidden">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
