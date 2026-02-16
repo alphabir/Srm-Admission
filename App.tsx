@@ -7,9 +7,9 @@ import {
   ParentEmotionalSection,
   Eligibility, 
   Cutoffs,
+  ComparisonSection,
   FeesSection, 
   Placements,
-  Testimonials,
   FAQ, 
   LeadCapture, 
   Footer,
@@ -55,6 +55,8 @@ const App: React.FC = () => {
           <Cutoffs />
         </div>
 
+        <ComparisonSection />
+
         <div id="fees" className="scroll-mt-32">
           <FeesSection />
         </div>
@@ -62,8 +64,6 @@ const App: React.FC = () => {
         <div id="placements" className="scroll-mt-32">
           <Placements />
         </div>
-
-        <Testimonials />
 
         <div id="faq" className="scroll-mt-32">
           <FAQ />
@@ -85,7 +85,7 @@ const App: React.FC = () => {
           href="https://wa.me/919382082728?text=Hi!%20I'm%20interested%20in%20SRM%202026%20admissions.%20Help%20me%20secure%20a%20seat!" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="bg-green-500 text-white w-16 h-16 rounded-2xl shadow-[0_0_30px_rgba(34,197,94,0.4)] flex items-center justify-center hover:scale-110 transition-all border-4 border-white neo-brutalism"
+          className="bg-green-500 text-white w-16 h-16 rounded-2xl shadow-[0_0_30px_rgba(34,197,94,0.4)] flex items-center justify-center hover:scale-110 transition-all border-4 border-black neo-brutalism"
         >
           <i className="fab fa-whatsapp text-3xl"></i>
         </a>

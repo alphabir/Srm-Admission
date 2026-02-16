@@ -78,9 +78,9 @@ export const Hero: React.FC<{ onPrimaryCTA: () => void }> = ({ onPrimaryCTA }) =
             Your gateway to <strong>Kattankulathur</strong> and beyond. Don't let your rank define your future. Expert guidance for SRMJEEE, direct seats, and management quota.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
-            <button onClick={onPrimaryCTA} className="bg-neon-blue text-black px-10 py-5 rounded-2xl font-black text-lg neo-brutalism uppercase">Check My Eligibility</button>
+            <button onClick={onPrimaryCTA} className="bg-neon-blue text-black px-10 py-5 rounded-2xl font-black text-lg neo-brutalism uppercase">Check Eligibility</button>
             <a href={getWAUrl("I want to book a free SRM 2026 counseling session.")} className="bg-white/5 border border-white/10 text-white px-10 py-5 rounded-2xl font-black text-lg flex items-center justify-center gap-3 hover:bg-white/10 transition-all">
-              Book Free Counseling
+              Book Counseling
             </a>
           </div>
         </div>
@@ -147,10 +147,10 @@ export const ParentEmotionalSection: React.FC = () => (
       <div className="inline-block p-4 bg-white/5 rounded-full mb-8">
         <span className="text-srm-gold text-2xl">👨‍👩‍👧‍👦</span>
       </div>
-      <h2 className="text-4xl md:text-6xl font-black mb-8 tracking-tight">WORRIED ABOUT <span className="text-srm-gold">PRIVATE FEES?</span></h2>
+      <h2 className="text-4xl md:text-6xl font-black mb-8 tracking-tight uppercase">WORRIED ABOUT <span className="text-srm-gold">PRIVATE FEES?</span></h2>
       <p className="text-slate-400 text-lg mb-12 max-w-2xl mx-auto leading-relaxed">
-        We understand. Education is the biggest investment of your life. While SRM fees might seem high, the <strong>Placement ROI (Return on Investment)</strong> is what matters. 
-        Most students in CSE/IT branches recover their entire 4-year tuition within 1.5 to 2 years of starting their careers.
+        We understand. Education is the biggest investment of your life. While SRM fees might seem high, the <strong>Placement ROI</strong> is unmatched. 
+        Most students in CSE recover their 4-year tuition within 1.5 years of placement.
       </p>
       <div className="bg-white/5 border border-white/10 p-12 rounded-[40px] glass">
         <h4 className="text-neon-blue font-black mb-4 uppercase tracking-widest text-sm">Cost vs Future Value</h4>
@@ -176,33 +176,74 @@ export const ParentEmotionalSection: React.FC = () => (
   </section>
 );
 
+// --- Comparison Table Section ---
+export const ComparisonSection: React.FC = () => (
+  <section className="py-24 bg-white text-black">
+    <div className="max-w-7xl mx-auto px-4">
+      <h2 className="text-5xl font-black mb-16 tracking-tighter text-center uppercase">SRM VS <span className="text-blue-600">OTHER PRIVATE UNIS.</span></h2>
+      <div className="overflow-x-auto">
+        <table className="w-full border-4 border-black bg-white rounded-3xl overflow-hidden font-bold">
+          <thead className="bg-black text-white text-[10px] uppercase tracking-widest">
+            <tr>
+              <th className="p-6 text-left">Feature</th>
+              <th className="p-6 text-left">SRM (KTR Campus)</th>
+              <th className="p-6 text-left">Others (VIT/Manipal/BITS)</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y-2 divide-black">
+            {[
+              { f: "Industry Exposure", srm: "Global Tie-ups & Research Focus", oth: "Varies, mostly placement centric" },
+              { f: "Campus Life", srm: "High flexibility, 400+ Acres Hub", oth: "Strict rules (VIT) / High Fees (BITS)" },
+              { f: "CSE Seat Availability", srm: "Entrance + Limited Direct Quota", oth: "Entrance Only (Very competitive)" },
+              { f: "ROI (Fees vs Package)", srm: "High (Top 1% placement rate)", oth: "Moderate to High" }
+            ].map((row, i) => (
+              <tr key={i} className="hover:bg-slate-50">
+                <td className="p-6 font-black bg-slate-50">{row.f}</td>
+                <td className="p-6 text-blue-600">{row.srm}</td>
+                <td className="p-6 text-slate-400">{row.oth}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div className="mt-12 flex justify-center">
+        <a href={getWAUrl("Help me compare SRM with other universities for my profile.")} className="bg-black text-white px-10 py-5 rounded-2xl font-black text-sm uppercase neo-brutalism">Get Expert Comparison</a>
+      </div>
+    </div>
+  </section>
+);
+
 // --- Eligibility & Cutoffs ---
 export const Eligibility: React.FC = () => (
-  <section id="criteria" className="py-24 bg-white text-black">
+  <section id="criteria" className="py-24 bg-slate-50 text-black">
     <div className="max-w-7xl mx-auto px-4">
       <div className="mb-20">
-        <h2 className="text-5xl font-black tracking-tighter mb-4">ELIGIBILITY <br/> <span className="text-blue-600">B.TECH 2026.</span></h2>
+        <h2 className="text-5xl font-black tracking-tighter mb-4 uppercase">THE CRITERIA <br/> <span className="text-blue-600">B.TECH 2026.</span></h2>
         <div className="grid md:grid-cols-2 gap-12 mt-12">
           <div className="space-y-6">
-            <div className="flex gap-4">
-              <div className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center font-black shrink-0">01</div>
-              <div>
-                <h4 className="font-black text-lg">Academic Grind</h4>
-                <p className="text-slate-500 font-bold">10+2 with Physics, Chemistry, and Mathematics (PCM). Minimum 60% aggregate for Main Campus; 50% for others.</p>
-              </div>
+            <div className="p-8 border-4 border-black bg-white rounded-3xl neo-brutalism">
+              <h3 className="font-black text-2xl mb-4">ENTRANCE ROUTE</h3>
+              <ul className="space-y-3 font-bold text-slate-600">
+                <li>• 10+2 with PCM (60% Minimum)</li>
+                <li>• Clear SRMJEEE 2026 Cutoff</li>
+                <li>• Higher ranks get KTR Campus</li>
+              </ul>
             </div>
-            <div className="flex gap-4">
-              <div className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center font-black shrink-0">02</div>
-              <div>
-                <h4 className="font-black text-lg">The Entrance Gate</h4>
-                <p className="text-slate-500 font-bold">Mandatory appearance in SRMJEEE 2026. Phase 1 & 2 are high priority.</p>
-              </div>
+            <div className="p-8 border-4 border-black bg-blue-600 text-white rounded-3xl neo-brutalism">
+              <h3 className="font-black text-2xl mb-4">DIRECT ROUTE</h3>
+              <ul className="space-y-3 font-bold">
+                <li>• Limited seats for Management Quota</li>
+                <li>• Confirmed admission for early birds</li>
+                <li>• Skip entrance anxiety</li>
+              </ul>
             </div>
           </div>
-          <div className="bg-slate-50 p-10 rounded-[40px] border-4 border-black neo-brutalism">
-            <h3 className="font-black text-2xl mb-6">DIRECT ADMISSION?</h3>
-            <p className="text-slate-600 font-bold mb-8">Missed the rank? Limited seats are available under Management/Direct Quota for high-intent candidates. Don't wait until seats are full.</p>
-            <a href={getWAUrl("I want to know about SRM 2026 direct admission process.")} className="text-blue-600 font-black uppercase tracking-widest text-xs flex items-center gap-2">Secure My Seat <i className="fas fa-arrow-right"></i></a>
+          <div className="flex items-center justify-center p-12 bg-black text-white rounded-[60px]">
+            <div className="text-center">
+              <h4 className="text-neon-blue text-4xl font-black mb-4">SEATS FILLING FAST.</h4>
+              <p className="font-bold opacity-60 mb-8">SRM KTR CSE seats are the first to close every year. Secure your spot now.</p>
+              <a href={getWAUrl("I want to know about SRM 2026 direct admission process.")} className="bg-neon-blue text-black px-10 py-5 rounded-2xl font-black text-sm uppercase">Secure My Seat</a>
+            </div>
           </div>
         </div>
       </div>
@@ -212,9 +253,9 @@ export const Eligibility: React.FC = () => (
 
 // --- Cutoff Analysis Table ---
 export const Cutoffs: React.FC = () => (
-  <section id="cutoffs" className="py-24 bg-slate-50 text-black">
+  <section id="cutoffs" className="py-24 bg-white text-black">
     <div className="max-w-7xl mx-auto px-4">
-      <h2 className="text-5xl font-black mb-16 tracking-tighter text-center">SRMJEEE 2026 <span className="text-blue-600">CUTOFFS.</span></h2>
+      <h2 className="text-5xl font-black mb-16 tracking-tighter text-center uppercase">ESTIMATED <span className="text-blue-600">CUTOFFS 2026.</span></h2>
       <div className="overflow-x-auto">
         <table className="w-full border-4 border-black bg-white rounded-3xl overflow-hidden font-bold">
           <thead className="bg-black text-white text-[10px] uppercase tracking-widest">
@@ -241,7 +282,7 @@ export const Cutoffs: React.FC = () => (
           </tbody>
         </table>
       </div>
-      <p className="mt-8 text-center text-slate-500 font-bold text-sm italic">*Estimated ranges based on previous year trends. Competitive ranks fluctuate.</p>
+      <p className="mt-8 text-center text-slate-500 font-bold text-sm italic">*Estimated ranges based on previous trends.</p>
     </div>
   </section>
 );
@@ -252,32 +293,32 @@ export const FeesSection: React.FC = () => (
     <div className="max-w-7xl mx-auto px-4">
       <div className="grid lg:grid-cols-2 gap-16 items-center">
         <div>
-          <h2 className="text-5xl font-black mb-8 tracking-tighter">THE <span className="text-neon-blue">FEES.</span></h2>
+          <h2 className="text-5xl font-black mb-8 tracking-tighter uppercase">THE <span className="text-neon-blue">BAG.</span></h2>
           <div className="space-y-4">
              <div className="p-8 border-2 border-white/10 rounded-[30px] glass">
                 <div className="flex justify-between items-center mb-4">
                   <h4 className="font-black text-xl">CSE & Specializations</h4>
                   <span className="bg-neon-blue text-black px-4 py-1 rounded-full text-[10px] font-black uppercase">Most Popular</span>
                 </div>
-                <p className="text-3xl font-black mb-2">₹4,50,000 - ₹5,00,000 <span className="text-sm text-slate-500">/ per yr</span></p>
+                <p className="text-3xl font-black mb-2">₹4.5L - ₹5.0L <span className="text-sm text-slate-500">/ per yr</span></p>
                 <p className="text-xs text-slate-500 font-bold">Includes main campus premium labs and industry tie-ups.</p>
              </div>
              <div className="p-8 border-2 border-white/10 rounded-[30px] glass">
                 <h4 className="font-black text-xl mb-4">Core Engineering</h4>
-                <p className="text-3xl font-black mb-2">₹2,50,000 - ₹3,50,000 <span className="text-sm text-slate-500">/ per yr</span></p>
+                <p className="text-3xl font-black mb-2">₹2.5L - ₹3.5L <span className="text-sm text-slate-500">/ per yr</span></p>
                 <p className="text-xs text-slate-500 font-bold">Mechanical, Civil, Automobile, etc.</p>
              </div>
           </div>
         </div>
         <div className="bg-neon-blue p-12 rounded-[60px] text-black neo-brutalism">
-          <h3 className="font-black text-3xl mb-6">SCHOLARSHIPS 🎓</h3>
+          <h3 className="font-black text-3xl mb-6 uppercase">SCHOLARSHIPS 🎓</h3>
           <ul className="space-y-4 font-bold mb-8">
-            <li className="flex gap-3">✅ <strong>100% Fee Waiver:</strong> Top 100 SRMJEEE Ranks</li>
-            <li className="flex gap-3">✅ <strong>75% Fee Waiver:</strong> Ranks 101 - 500</li>
-            <li className="flex gap-3">✅ <strong>50% Fee Waiver:</strong> Ranks 501 - 1,000</li>
-            <li className="flex gap-3">✅ <strong>State/Board Toppers:</strong> Special Direct Waivers</li>
+            <li>✅ <strong>100% Waiver:</strong> Top 100 SRMJEEE Ranks</li>
+            <li>✅ <strong>75% Waiver:</strong> Ranks 101 - 500</li>
+            <li>✅ <strong>50% Waiver:</strong> Ranks 501 - 1,000</li>
+            <li>✅ <strong>State Toppers:</strong> Special Direct Waivers</li>
           </ul>
-          <a href={getWAUrl("I want to check my scholarship eligibility for SRM 2026.")} className="block text-center bg-black text-neon-blue py-5 rounded-2xl font-black uppercase text-xs">Check My Scholarship Tier</a>
+          <a href={getWAUrl("I want to check my scholarship eligibility for SRM 2026.")} className="block text-center bg-black text-neon-blue py-5 rounded-2xl font-black uppercase text-xs">Check My Tier</a>
         </div>
       </div>
     </div>
@@ -289,53 +330,25 @@ export const Placements: React.FC = () => (
   <section id="placements" className="py-24 bg-white text-black">
     <div className="max-w-7xl mx-auto px-4">
       <div className="text-center mb-20">
-        <h2 className="text-5xl font-black mb-4 tracking-tighter">PLACEMENT <span className="text-blue-600">RECORDS.</span></h2>
-        <p className="text-slate-500 font-bold uppercase tracking-widest text-sm">Where world-class talent meets global opportunities</p>
+        <h2 className="text-5xl font-black mb-4 tracking-tighter uppercase">PLACEMENT <span className="text-blue-600">LEGACY.</span></h2>
+        <p className="text-slate-500 font-bold uppercase tracking-widest text-sm">Where talent meets industry titans</p>
       </div>
       <div className="grid md:grid-cols-4 gap-6 mb-20">
         {[
-          { v: "₹1.1 CR", t: "Highest Package", c: "International" },
-          { v: "₹10.5L", t: "Avg. CSE Package", c: "Domestic" },
-          { v: "1,200+", t: "Top Recruiters", c: "On-Campus" },
-          { v: "10,000+", t: "Offers Made", c: "2024 Batch" }
+          { v: "₹1.1 CR", t: "Highest Package" },
+          { v: "₹10.5L", t: "Avg. CSE Package" },
+          { v: "1,200+", t: "Top Recruiters" },
+          { v: "10,000+", t: "Offers in 2024" }
         ].map(s => (
           <div key={s.t} className="p-8 bg-slate-50 border-4 border-black rounded-[40px] text-center neo-brutalism">
             <h4 className="text-3xl font-black mb-1">{s.v}</h4>
             <p className="text-xs font-black uppercase text-blue-600 mb-2">{s.t}</p>
-            <p className="text-[10px] text-slate-400 font-bold uppercase">{s.c}</p>
           </div>
         ))}
       </div>
       <div className="flex flex-wrap justify-center gap-12 opacity-30 grayscale hover:grayscale-0 transition-all duration-700">
         {['Google', 'Microsoft', 'Amazon', 'TCS', 'Cognizant', 'Wipro', 'Infosys', 'Adobe'].map(brand => (
           <span key={brand} className="text-4xl font-black tracking-tighter">{brand}</span>
-        ))}
-      </div>
-    </div>
-  </section>
-);
-
-// --- Testimonials ---
-export const Testimonials: React.FC = () => (
-  <section className="py-24 bg-slate-50">
-    <div className="max-w-7xl mx-auto px-4">
-      <h2 className="text-3xl font-black mb-12 text-center uppercase tracking-widest text-slate-400">Student Voices</h2>
-      <div className="grid md:grid-cols-3 gap-8">
-        {[
-          { name: "Rahul S.", year: "2023 Grad", text: "Got into Amazon with a 45LPA package. The coding environment at KTR is insane!" },
-          { name: "Sneha V.", year: "3rd Year", text: "The research opportunities here allowed me to publish a paper in my 2nd year. SRM is worth every penny." },
-          { name: "Priya D.", year: "Parent", text: "Initially worried about the fee, but seeing my son's growth and eventual placement in TCS Digital, I'm satisfied." }
-        ].map((t, i) => (
-          <div key={i} className="p-10 bg-white border-2 border-black rounded-[40px] shadow-[8px_8px_0_rgba(0,0,0,1)]">
-            <p className="text-lg font-bold mb-6 italic">"{t.text}"</p>
-            <div className="flex items-center gap-4">
-              <div className="w-10 h-10 bg-slate-200 rounded-full"></div>
-              <div>
-                <h5 className="font-black text-sm">{t.name}</h5>
-                <p className="text-[10px] uppercase font-bold text-slate-400">{t.year}</p>
-              </div>
-            </div>
-          </div>
         ))}
       </div>
     </div>
@@ -351,9 +364,9 @@ export const LeadCapture: React.FC<{ onCTA: () => void }> = ({ onCTA }) => {
           <i className="fab fa-whatsapp text-[200px]"></i>
         </div>
         <div className="text-center relative z-10">
-          <h2 className="text-5xl md:text-7xl font-black tracking-tighter mb-8 leading-none">THE ADMISSION <br/> FAST-PASS.</h2>
+          <h2 className="text-5xl md:text-7xl font-black tracking-tighter mb-8 leading-none uppercase">GET THE <br/> FAST-PASS.</h2>
           <p className="text-xl font-bold mb-12 max-w-xl mx-auto opacity-70">
-            Unsure about your SRMJEEE rank or budget? Let our experts match you to the right campus and branch.
+            Unsure about your SRMJEEE rank or budget? Take the test and get matched.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6">
             <button onClick={onCTA} className="bg-black text-white px-12 py-6 rounded-2xl font-black text-xl uppercase tracking-tighter hover:scale-105 transition-all">Take College Match Test</button>
@@ -371,10 +384,10 @@ export const LeadCapture: React.FC<{ onCTA: () => void }> = ({ onCTA }) => {
 export const FAQ: React.FC = () => {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
   const faqs = [
-    { q: "Is SRMJEEE mandatory for admission?", a: "Yes, for the majority of merit-based seats, SRMJEEE is mandatory. However, limited seats under Management Quota can be secured based on academic performance." },
-    { q: "Can I get SRM without JEE Main?", a: "Absolutely. SRM has its own entrance exam (SRMJEEE). You don't need a high JEE Main score, but high scores can sometimes help in direct interviews." },
-    { q: "What rank is required for CSE Main Campus?", a: "To be safe, aim for a rank under 10,000. CSE with specializations like AI/ML are also highly sought after." },
-    { q: "Which campus is considered the best?", a: "Kattankulathur (Main Campus) is the most prestigious with the best research labs and infrastructure." }
+    { q: "Is SRMJEEE mandatory?", a: "For merit seats, yes. For management quota, academic performance (PCM %) is prioritized." },
+    { q: "Can I get SRM without JEE Main?", a: "Yes, SRMJEEE is the primary gateway, not JEE Main." },
+    { q: "What rank is safe for CSE?", a: "Under 10,000 for KTR Campus Core CSE." },
+    { q: "Which campus has the best placements?", a: "Kattankulathur is the centralized placement hub." }
   ];
 
   return (
@@ -446,7 +459,7 @@ export const Footer: React.FC = () => (
           <span className="font-bungee text-2xl tracking-tighter">SRM <span className="text-neon-blue">2026</span></span>
         </div>
         <p className="text-slate-500 max-w-sm font-medium mb-10 leading-relaxed">
-          Independent admission portal for SRM IST. Helping students since 2018. Get verified info on cutoffs, fees, and direct admission routes.
+          Independent admission portal for SRM IST. Helping students since 2018.
         </p>
       </div>
       <div>
@@ -472,3 +485,4 @@ export const Footer: React.FC = () => (
 );
 
 export const Scholarships = () => null;
+export const Testimonials = () => null;
